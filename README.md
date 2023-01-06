@@ -4,7 +4,7 @@
 Instalar executores auto-hostados no servidor linux
 
 ## :books: Funcionalidades
-* <b></b> Implantar e gerenciar para executação dos trabalhos por meio do GitHub Actions no em GitHub.com
+* <b></b> Implantar, gerenciamento e executação dos trabalhos por meio do GitHub Actions no em GitHub.com
 
 ## :wrench: Tecnologias utilizadas
 * Tecnologia; AWS/GITHUB
@@ -80,7 +80,7 @@ segue o link: https://gist.github.com/Sunlighter/fe602d2a090e64a01c3369fe7d7d732
   <tr>
     <td align="center">
       <a href="http://github.com/tatialveso">
-        <img src="https://avatars.githubusercontent.com/u/56259137?v=4" width="100px;" alt="Foto de Tati Alves no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/56259137?v=4" width="100px;" alt="Foto de jonathas Benevides no GitHub"/><br>
         <sub>
           <b>Jonathas Benevides</b>
         </sub>
