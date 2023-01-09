@@ -44,6 +44,7 @@ Após as Vms geradas e em execução na AWS, será preciso acessar o GiHUB.
 
 ![image](https://user-images.githubusercontent.com/48971064/211006234-8131f061-601f-4695-98d9-03591ea18b01.png)
 
+
 5. Você verá instruções mostrando como baixar o executor e instalá-lo em sua máquina de executor auto-hospedada.
 Abra um shell em sua máquina de executor auto-hospedado e execute cada comando shell na ordem mostrada.
 
@@ -70,8 +71,10 @@ Seguem os comandos para configurações:
 
 * Create the runner and start the configuration experience
 ```
-./config.sh --url https://github.com/jonathas32/DevopsTeste --token ALVT2OEK4ORUQNTKYO43YCLDXALZA
+./config.sh --url https://github.com/jonathas32/DevopsTeste --token ALVT2OEK*************
 ```
+Obs: O token gerado expira, para configuração deverá realizar com agilidade.
+
 * Caso apresente o erro: /lib64/libicui18n.so.50: undefined symbol: ucol_setMaxVariable_50. Será preciso realizar a Instalação do .NET 5 no Amazon Linux 2 para ARM64 
 
 ![image](https://user-images.githubusercontent.com/48971064/211013139-e7bfb46e-1d33-4f50-b020-d563dbdf5d28.png)
@@ -141,7 +144,12 @@ cd
 8. Edita o arquivo `.bash_profile` e adicione o seguinte (você pode querer alterar isso
    um pouco dependendo da sua configuração):
 
-Obs: No tareminal acesse com o comando nano $HOME/.bash_profile
+Obs: No terminal acesse com o comando: 
+
+```
+nano $HOME/.bash_profile
+```
+![image](https://user-images.githubusercontent.com/48971064/211395351-dc7fceaf-ba36-46f8-bf61-2fb22263cb09.png)
 
 ```
 PATH=$PATH:$HOME/dotnet5
