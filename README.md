@@ -1,10 +1,19 @@
 <h1 align="center">:file_cabinet: README.md</h1>
 
 ## :memo: Descrição
-Instalar executores auto-hostados no servidor linux
+Instalar executores auto-hostados em servidores linux
 
 ## :books: Funcionalidades
-* <b></b> Implantar, gerenciamento e executação dos trabalhos por meio do GitHub Actions no em GitHub.com
+* <b></b>  executor auto-hospedado é um sistema que você implanta e gerencia para executar os trabalhos por meio do GitHub Actions no em GitHub.com
+
+Os executores auto-hospedados oferecem mais controle de ferramentas de hardware, sistema operacional e software do que os executores hospedados no GitHub fornecem. Com 
+os executores auto-hospedados, você pode criar configurações de hardware personalizadas de acordo com suas necessidades, com o poder de processamento ou a memória para 
+executar trabalhos maiores, instalar programas de software disponíveis na sua rede local e escolher um sistema operacional não oferecido pelos executores hospedados no 
+GitHub. Os executores auto-hospedados podem ser físicos, virtuais, em um contêiner, no local ou em uma nuvem.
+
+Compatibility
+
+![image](https://user-images.githubusercontent.com/48971064/211373337-ec4be184-09cf-4406-ab66-f7e0eab95c62.png)
 
 ## :wrench: Tecnologias utilizadas
 * Tecnologia; AWS/GITHUB
@@ -66,23 +75,134 @@ Segue os comandos para configuração:
 ![image](https://user-images.githubusercontent.com/48971064/211013139-e7bfb46e-1d33-4f50-b020-d563dbdf5d28.png)
 
 Será preciso realizar a Instalação do .NET 5 no Amazon Linux 2 para ARM64 
-segue o link: https://gist.github.com/Sunlighter/fe602d2a090e64a01c3369fe7d7d7325
+
+Segue os passo a passo da instalação.
+
+# Installing .NET 5 in Amazon Linux 2 for ARM64
+
+This is a way to install .NET 5 in your home directory without modifying the
+system.
+
+At the time of this writing, Amazon Linux 2 for ARM64 *almost* works already,
+but there is a problem with the ICU library. I will show this problem and how
+to fix it.
+
+1. Start Amazon Linux 2 and sign in. (I recommend an **m6g.medium** instance
+   for this, although smaller ones may work. Bigger ARM instances will
+   definitely work, but cost more per unit time.)
+
+2. Get the .NET 5 tarball. (Unfortunately the URL is kinda long!)
+
+```
+wget https://download.visualstudio.microsoft.com/download/pr/27840e8b-d61c-472d-8e11-c16784d40091/ae9780ccda4499405cf6f0924f6f036a/dotnet-sdk-5.0.100-linux-arm64.tar.gz
+```
+
+3. Uncompress it into its own directory.
+
+```
+mkdir dotnet5
+cd dotnet5
+tar -xzf ../dotnet-sdk-5.0.100-linux-arm64.tar.gz
+```
+
+4. You can run `./dotnet --version` at this time, but you will get this error:
+
+```
+Cannot get symbol ucol_setMaxVariable_50 from libicui18n
+Error: /lib64/libicui18n.so.50: undefined symbol: ucol_setMaxVariable_50
+Aborted
+```
+
+5. To fix this, you have to download the latest ICU library:
+
+```
+cd
+wget https://github.com/unicode-org/icu/releases/download/release-68-1/icu4c-68_1-src.tgz
+mkdir icubuild
+cd icubuild
+tar -xzf ../icu4c-68_1-src.tgz
+cd icu/source
+```
+
+6. You need the C++ compiler in order to build the ICU library.
+
+```
+sudo yum install gcc-c++
+```
+
+7. Now you can configure, make, and make install. If you chose an instance
+   type with multiple CPUs, you can speed this part up by passing the `-j`
+   option to make.
+
+```
+mkdir ~/libicu
+./configure --prefix=/home/ec2-user/libicu
+make
+make install
+cd
+```
+
+8. Edit your `.bash_profile` and add the following (you may want to alter this
+   a little depending on your particular setup):
+
+```
+PATH=$PATH:$HOME/dotnet5
+export PATH
+DOTNET_ROOT=$HOME/dotnet5
+export DOTNET_ROOT
+LD_LIBRARY_PATH=$HOME/libicu/lib
+export LD_LIBRARY_PATH
+```
+
+9. Here are some optional cleanup steps:
+
+```
+rm dotnet-sdk-5.0.100-linux-arm64.tar.gz
+rm icu4c-68_1-src.tgz
+rm -rf icubuild
+```
+
+10. Log out and log in again. You should be able to run `dotnet --version` and
+   it should work. You should also be able to play with the F# interpreter, if
+   you want, with `dotnet --fsi`. (Use `exit 0 ;;` to exit F#.)
+
+link: https://gist.github.com/Sunlighter/fe602d2a090e64a01c3369fe7d7d7325
+
+Depois de instalar o dotnet5 roda novamente o comando.
+
+```
+./config.sh --url https://github.com/jonathas32/DevopsTeste --token ALVT2OEK4O**********
+```
 
 * Last step, run it!
 ```
 ./run.sh
 ```
-## :soon: Implementação futura
-* O que será implementado na próxima sprint?
+![image](https://user-images.githubusercontent.com/48971064/211368154-3c6ff3e1-fadf-4ba3-9d68-0928c7e6040e.png)
 
-## :handshake: Colaboradores
+![image](https://user-images.githubusercontent.com/48971064/211368016-ca13c1f1-381f-40f0-b2b7-acb83712193a.png)
+
+## :handshake: Colaboradores DevOps
 <table>
   <tr>
     <td align="center">
-      <a href="http://github.com/tatialveso">
-        <img src="https://avatars.githubusercontent.com/u/56259137?v=4" width="100px;" alt="Foto de jonathas Benevides no GitHub"/><br>
+      <a href="http://github.com/jonathas32">
+        <img src="https://github.com/jonathas32/DevopsTeste/blob/main/img/john.jpg?raw=true" width="100px;" alt="Foto de jonathas Benevides no GitHub"/><br>
         <sub>
           <b>Jonathas Benevides</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="http://github.com/jonathas32">
+        <img src="https://github.com/jonathas32/DevopsTeste/blob/main/img/bruno.jpg?raw=true" width="100px;" alt="Foto de Bruno no GitHub"/><br>
+        <sub>
+          <b>Bruno Baltazar</b>
         </sub>
       </a>
     </td>
