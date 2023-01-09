@@ -50,26 +50,26 @@ Abra um shell em sua máquina de executor auto-hospedado e execute cada comando 
 
 Segue os comandos para Download:
 
-* Create a folder
+* Criar uma pasta:
 ```
 mkdir actions-runner && cd actions-runner
 ```
-* Download the latest runner package
+* Baixe o pacote mais recente:
 ```
 curl -o actions-runner-linux-arm64-2.299.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.299.1/actions-runner-linux-arm64-2.299.1.tar.gz
 ```
-* Optional: Validate the hash
+* Opcional: Valide o hash:
 ```
 echo "debe1cc9656963000a4fbdbb004f475ace5b84360ace2f7a191c1ccca6a16c00  actions-runner-linux-arm64-2.299.1.tar.gz" | shasum -a 256 -c
 ```
-* Extract the installer
+* Extraia o instalador:
 ```
 tar xzf ./actions-runner-linux-arm64-2.299.1.tar.gz
 ```
 
 Seguem os comandos para configurações:
 
-* Create the runner and start the configuration experience
+* Crie o runner e inicie a experiência de configuração.
 ```
 ./config.sh --url https://github.com/jonathas32/DevopsTeste --token ALVT2OEK*************
 ```
@@ -79,7 +79,7 @@ Obs: O token gerado expira, para configuração deverá realizar com agilidade.
 
 ![image](https://user-images.githubusercontent.com/48971064/211013139-e7bfb46e-1d33-4f50-b020-d563dbdf5d28.png)
 
-Segue o passo a passo da instalação do Dotnet.
+Segue o passo a passo da instalação do .NET:
 
 # Installing .NET 5 in Amazon Linux 2 for ARM64
 
@@ -142,7 +142,7 @@ cd
 ```
 
 8. Edita o arquivo `.bash_profile` e adicione o seguinte (você pode querer alterar isso
-   um pouco dependendo da sua configuração):
+   um pouco dependendo da sua configuração).
 
 Obs: No terminal acesse com o comando: 
 
@@ -159,6 +159,7 @@ export DOTNET_ROOT
 LD_LIBRARY_PATH=$HOME/libicu/lib
 export LD_LIBRARY_PATH
 ```
+Obs: salva as alterações.
 
 9. Aqui estão algumas etapas opcionais de limpeza:
 
