@@ -1,17 +1,18 @@
 <h1 align="center">:file_cabinet: README.md</h1>
 
 ## :memo: Descrição
-Instalar executores auto-hostados em servidores linux
+Instalação de executores auto-hostados em servidores linux
 
 ## :books: Funcionalidades
-* <b></b>  executor auto-hospedado é um sistema que você implanta e gerencia para executar os trabalhos por meio do GitHub Actions no em GitHub.com
-
-Os executores auto-hospedados oferecem mais controle de ferramentas de hardware, sistema operacional e software do que os executores hospedados no GitHub fornecem. Com 
+* <b></b> 
+Oferecer mais controle de ferramentas de hardware, sistema operacional e software do que os executores hospedados no GitHub fornecem. Com 
 os executores auto-hospedados, você pode criar configurações de hardware personalizadas de acordo com suas necessidades, com o poder de processamento ou a memória para 
 executar trabalhos maiores, instalar programas de software disponíveis na sua rede local e escolher um sistema operacional não oferecido pelos executores hospedados no 
-GitHub. Os executores auto-hospedados podem ser físicos, virtuais, em um contêiner, no local ou em uma nuvem.
+GitHub. Os executores auto-hospedados podem ser físicos, virtuais, em um contêiner, no local ou em uma nuvem. 
 
-Compatibility
+(Executor auto-hospedado é um sistema que gerencia e executa os trabalhos por meio do GitHub Actions no GitHub.com).
+
+Compatibilidade:
 
 ![image](https://user-images.githubusercontent.com/48971064/211373337-ec4be184-09cf-4406-ab66-f7e0eab95c62.png)
 
@@ -20,7 +21,7 @@ Compatibility
 
 ## :rocket: Rodando o projeto
 
-Depois que as Vms estiverem criada e em execução na AWS, será preciso acessar o GiHUb. Navegue até a página principal do repositório. 
+Após as Vms geradas e em execução na AWS, será preciso acessar o GiHUB. 
 
 ![image](https://user-images.githubusercontent.com/48971064/211009038-a27aeb50-45ae-44a0-bc98-3985e0c5822b.png)
 
@@ -28,21 +29,22 @@ Depois que as Vms estiverem criada e em execução na AWS, será preciso acessar
 
 ![image](https://user-images.githubusercontent.com/48971064/211010248-138ff65e-1e48-4604-9169-94b15f4cf43a.png)
 
+* Navegue até a página principal do repositório. 
 1. Abaixo do nome do repositório, clique em  'Settings'. 
 
 ![image](https://user-images.githubusercontent.com/48971064/211005192-16b4e297-8fdf-4385-aca1-f18481cb90e6.png)
 
-1. Na barra lateral esquerda, clique em  Ações, depois em Executores.
+2. Na barra lateral esquerda, clique em  Ações, depois em Executores.
 
-2. Clique em Novo executor auto-hospedado.
+3. Clique em Novo executor auto-hospedado.
 
-![image](https://user-images.githubusercontent.com/48971064/211006027-7e296fcd-05fb-4989-a72f-d70bb7f14a84.png)
+![image](https://user-images.githubusercontent.com/48971064/211388179-f4dc12a8-d6ab-4763-999c-ae604835dd31.png)
 
-3. Selecione a imagem e a arquitetura do sistema operacional do computador do executor auto-hospedado.
+4. Selecione a imagem e a arquitetura do sistema operacional do computador do executor auto-hospedado.
 
 ![image](https://user-images.githubusercontent.com/48971064/211006234-8131f061-601f-4695-98d9-03591ea18b01.png)
 
-4. Você verá instruções mostrando como baixar o executor e instalá-lo em sua máquina de executor auto-hospedada.
+5. Você verá instruções mostrando como baixar o executor e instalá-lo em sua máquina de executor auto-hospedada.
 Abra um shell em sua máquina de executor auto-hospedado e execute cada comando shell na ordem mostrada.
 
 Segue os comandos para Download:
@@ -64,40 +66,34 @@ echo "debe1cc9656963000a4fbdbb004f475ace5b84360ace2f7a191c1ccca6a16c00  actions-
 tar xzf ./actions-runner-linux-arm64-2.299.1.tar.gz
 ```
 
-Segue os comandos para configuração:
+Seguem os comandos para configurações:
 
 * Create the runner and start the configuration experience
 ```
 ./config.sh --url https://github.com/jonathas32/DevopsTeste --token ALVT2OEK4ORUQNTKYO43YCLDXALZA
 ```
-* Caso apresentar o error: /lib64/libicui18n.so.50: undefined symbol: ucol_setMaxVariable_50
+* Caso apresente o erro: /lib64/libicui18n.so.50: undefined symbol: ucol_setMaxVariable_50. Será preciso realizar a Instalação do .NET 5 no Amazon Linux 2 para ARM64 
 
 ![image](https://user-images.githubusercontent.com/48971064/211013139-e7bfb46e-1d33-4f50-b020-d563dbdf5d28.png)
 
-Será preciso realizar a Instalação do .NET 5 no Amazon Linux 2 para ARM64 
-
-Segue os passo a passo da instalação.
+Segue o passo a passo da instalação do Dotnet.
 
 # Installing .NET 5 in Amazon Linux 2 for ARM64
 
-This is a way to install .NET 5 in your home directory without modifying the
-system.
+Esta é uma maneira de instalar o .NET 5 em seu diretório inicial sem modificar o
+sistema.
 
-At the time of this writing, Amazon Linux 2 for ARM64 *almost* works already,
-but there is a problem with the ICU library. I will show this problem and how
-to fix it.
+1. Inicie o Amazon Linux 2 e faça login. (Eu recomendo uma instância **m6g.medium**
+   para isso, embora os menores possam funcionar. Instâncias ARM maiores irão
+   definitivamente funciona, mas custa mais por unidade de tempo.)
 
-1. Start Amazon Linux 2 and sign in. (I recommend an **m6g.medium** instance
-   for this, although smaller ones may work. Bigger ARM instances will
-   definitely work, but cost more per unit time.)
-
-2. Get the .NET 5 tarball. (Unfortunately the URL is kinda long!)
+2. Obtenha o tarball .NET 5.
 
 ```
 wget https://download.visualstudio.microsoft.com/download/pr/27840e8b-d61c-472d-8e11-c16784d40091/ae9780ccda4499405cf6f0924f6f036a/dotnet-sdk-5.0.100-linux-arm64.tar.gz
 ```
 
-3. Uncompress it into its own directory.
+3. Descompacte-o em seu próprio diretório.
 
 ```
 mkdir dotnet5
@@ -105,7 +101,7 @@ cd dotnet5
 tar -xzf ../dotnet-sdk-5.0.100-linux-arm64.tar.gz
 ```
 
-4. You can run `./dotnet --version` at this time, but you will get this error:
+4. você pode rodar `./dotnet --version` neste momento, mas você receberá este erro:
 
 ```
 Cannot get symbol ucol_setMaxVariable_50 from libicui18n
@@ -113,7 +109,7 @@ Error: /lib64/libicui18n.so.50: undefined symbol: ucol_setMaxVariable_50
 Aborted
 ```
 
-5. To fix this, you have to download the latest ICU library:
+5. Para corrigir isso, você deve baixar a biblioteca ICU mais recente:
 
 ```
 cd
@@ -124,15 +120,15 @@ tar -xzf ../icu4c-68_1-src.tgz
 cd icu/source
 ```
 
-6. You need the C++ compiler in order to build the ICU library.
+6. Você precisa do compilador C++ para construir a biblioteca ICU.
 
 ```
 sudo yum install gcc-c++
 ```
 
-7. Now you can configure, make, and make install. If you chose an instance
-   type with multiple CPUs, you can speed this part up by passing the `-j`
-   option to make.
+7. Agora você pode configurar e fazer a instalação. Se você escolheu uma instância
+   ,por exemplo, com várias CPUs, você pode acelerar esta parte passando o `-j`
+   opção de criar.
 
 ```
 mkdir ~/libicu
@@ -142,8 +138,10 @@ make install
 cd
 ```
 
-8. Edit your `.bash_profile` and add the following (you may want to alter this
-   a little depending on your particular setup):
+8. Edita o arquivo `.bash_profile` e adicione o seguinte (você pode querer alterar isso
+   um pouco dependendo da sua configuração):
+
+Obs: No tareminal acesse com o comando nano $HOME/.bash_profile
 
 ```
 PATH=$PATH:$HOME/dotnet5
@@ -154,7 +152,7 @@ LD_LIBRARY_PATH=$HOME/libicu/lib
 export LD_LIBRARY_PATH
 ```
 
-9. Here are some optional cleanup steps:
+9. Aqui estão algumas etapas opcionais de limpeza:
 
 ```
 rm dotnet-sdk-5.0.100-linux-arm64.tar.gz
@@ -162,19 +160,16 @@ rm icu4c-68_1-src.tgz
 rm -rf icubuild
 ```
 
-10. Log out and log in again. You should be able to run `dotnet --version` and
-   it should work. You should also be able to play with the F# interpreter, if
-   you want, with `dotnet --fsi`. (Use `exit 0 ;;` to exit F#.)
+10. Saia e faça login novamente e confirma a instalação com o comando `dotnet --version`.
+   
+link de referencia: https://gist.github.com/Sunlighter/fe602d2a090e64a01c3369fe7d7d7325
 
-link: https://gist.github.com/Sunlighter/fe602d2a090e64a01c3369fe7d7d7325
-
-Depois de instalar o dotnet5 roda novamente o comando.
+Após a instalação do Dotnet5, rodar novamente o comando.
 
 ```
 ./config.sh --url https://github.com/jonathas32/DevopsTeste --token ALVT2OEK4O**********
 ```
-
-* Last step, run it!
+* Para finalizar, execute-o!
 ```
 ./run.sh
 ```
