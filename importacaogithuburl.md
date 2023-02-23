@@ -1,4 +1,4 @@
-<h1 align="center">:file_cabinet: README.md</h1>
+<h1 align="center">:file_cabinet: importacaogithuburl.md</h1>
 
 ## :memo: Descrição
 Importação de repositorio via URL no github 
@@ -6,7 +6,7 @@ Importação de repositorio via URL no github
 ## :books: Funcionalidades
 
 * <b></b> 
-Realizar a importação dos arquivos do gitlab que apresentam o fluxo de trabalho, migrando com integridade para o repositotio criado no github.   
+Realizar a importação dos arquivos do gitlab que apresentam o fluxo de trabalho, migrando com integridade para o repositório criado no github.   
 
 ## :wrench: Tecnologias utilizadas
 * Tecnologia; GITLAB/GITHUB
@@ -18,7 +18,7 @@ Realizar a importação dos arquivos do gitlab que apresentam o fluxo de trabalh
 
 ## :rocket: Rodando o projeto
 
-Para iniciar a importação no github será preciso primeiro acessar o gitlab, ir no repositorio e copiar a url do micro_serviço, segue o exemplo abaixo.
+Para iniciar a importação no github será necessário acessar primeiramente o gitlab, ir no repositório e copiar a url do micro_serviço. Segue o exemplo:
 
 URL: https://gitlab.com/psicologia-viva-code/novaarquitetura/devops/devops-teste-importacao
 
@@ -28,74 +28,40 @@ URL: https://gitlab.com/psicologia-viva-code/novaarquitetura/devops/devops-teste
 
 ![image](https://user-images.githubusercontent.com/48971064/220737194-ba02dd33-f9c6-4e6b-a4f1-690acc30b834.png)
 
+* Após ter efetuado o login no github, deverá acessar na parte superior da pagina no canto direito a opção de 'Import repository' 
+
 ![image](https://user-images.githubusercontent.com/48971064/220737678-1967246f-0b24-4cbc-b58c-9552457b424c.png)
+
 
 ![image](https://user-images.githubusercontent.com/48971064/220737955-dd21a855-8114-48ed-a0d3-fca6a5c4c4ab.png)
 
-* Depois de ter efetuado o login no github, acessar na pagina em cima no canto direito a opção de 'Import repository' 
+* Será aberta a opção para colar a URL copiada no gitlab, na sequencia deverá add o nome do repositório, marcar a opção como privado e clicar em "Begin Import". 
 
 ![image](https://user-images.githubusercontent.com/48971064/220738407-19227050-01a0-4b92-bdc1-cdaa9500b055.png)
 
-* Será aberto essa opção para colar a URL copiada no gitlab e em seguida add o nome do repositorio e marcar a opção como privado. 
+* Ao clicar em 'Begin Import' será realizada a importação do repositório automaticamente. 
 
 ![image](https://user-images.githubusercontent.com/48971064/220738639-1edf50ce-887b-4b30-9233-7ba75290a954.png)
 
-* Ao clicar em 'Begin Import' será feito a importação do repositorio. 
+* Navegue até o repositório importado para que possa vincular a um time ou uma organização.
 
 ![image](https://user-images.githubusercontent.com/48971064/220739415-2b4bf9e5-7135-4959-a5e7-c7be72e1006d.png)
 
-* Navegue ate o repositorio que deseja add, pois o repositorio importado não possui time, neste caso será preciso add neste repositorio.
+* Clica em add repository no 'teams'
 
 ![image](https://user-images.githubusercontent.com/48971064/220739674-e3ddb3d8-8a61-461c-87b3-044f4f34e41d.png)
 
-* Clica em add repository no teams
+* Add o token de autenticação para proceguir.
 
 ![image](https://user-images.githubusercontent.com/48971064/220739777-dc694c85-d921-4aba-8a14-f990aec5bf6b.png)
 
-* Confirmar o acesso com o token.
-
 ![image](https://user-images.githubusercontent.com/48971064/220740192-7c4bb9d0-96ad-409e-a9da-b82a881c143c.png)
 
-* repositorio importado
+* Repositório importado com sucesso.
 
 ## :handshake: Colaboradores DevOps
-<table>
-  <tr>
-    <td align="center">
-      <a href="http://github.com/jonathas32">
-        <img src="https://github.com/jonathas32/DevopsTeste/blob/main/img/john.jpg?raw=true" width="100px;" alt="Foto de jonathas Benevides no GitHub"/><br>
-        <sub>
-          <b>Jonathas Benevides</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="http://github.com/jonathas32">
-        <img src="https://github.com/jonathas32/DevopsTeste/blob/main/img/bruno.jpg?raw=true" width="100px;" alt="Foto de Bruno no GitHub"/><br>
-        <sub>
-          <b>Bruno Baltazar</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="http://github.com/jonathas32">
-        <img src="https://github.com/jonathas32/DevopsTeste/blob/main/img/Leandro.jpg?raw=true" width="100px;" alt="Foto de Leandro no GitHub"/><br>
-        <sub>
-          <b>Leandro Dionizio</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+| [<img src="https://github.com/jonathas32/DevopsTeste/blob/main/img/john.jpg?raw=true" width=115><br><sub>Jonathas Benevides</sub>](http://github.com/jonathas32) | [<img src="https://github.com/jonathas32/DevopsTeste/blob/main/img/bruno.jpg?raw=true" width=115><br><sub>Bruno Baltazar</sub>](http://github.com/jonathas32) | [<img src="https://github.com/jonathas32/DevopsTeste/blob/main/img/Leandro.jpg?raw=true" width=115><br><sub>Leandro Dionizio</sub>](http://github.com/jonathas32) |
+| :---: | :---: | :---: |
 
 ## :dart: Status do projeto
