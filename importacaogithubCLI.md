@@ -1,12 +1,14 @@
 <h1 align="center">:file_cabinet: importacaogithuburl.md</h1>
 
 ## :memo: Descrição
-Importação de repositorio via URL no github 
+Importação de repositorio via Comando/CLI no github 
 
 ## :books: Funcionalidades
 
 * <b></b> 
-Realizar a importação dos arquivos do gitlab que apresentam o fluxo de trabalho, migrando com integridade para o repositório criado no github.   
+Realizar a importação os repositorio do gitlab, migrando com integridade para o repositório criado no github. 
+
+Dica: o Importador do GitHub não é adequado para todas as importações. Por exemplo, se o código existente está hospedado em uma rede privada, sua ferramenta não conseguirá acessá-lo. Nesses casos, recomendamos importá-lo usando a linha de comando para repositórios Git ou uma ferramenta de migração de código-fonte externa para projetos importados de outros sistemas de controle de versão.
 
 ## :wrench: Tecnologias utilizadas
 * Tecnologia; GITLAB/GITHUB
@@ -20,9 +22,19 @@ Realizar a importação dos arquivos do gitlab que apresentam o fluxo de trabalh
 
 Para iniciar a importação no github será necessário acessar primeiramente o gitlab, ir no repositório e copiar a url do micro_serviço. Segue o exemplo:
 
-URL: https://gitlab.com/psicologia-viva-code/novaarquitetura/devops/devops-teste-importacao
+ * Crie um repositório no GitHub. Você importará o repositório Git externo para este novo repositório.
+ * Na linha de comando, faça um clone "vazio" do repositório externo usando a URL clone externo. Isso criará uma cópia integral dos dados, mas sem um diretório de trabalho para editar arquivos, e garantirá uma exportação limpa e recente de todos os dados antigos.
+ * 
+$ git clone --bare https://external-host.com/EXTUSER/REPO.git
 
-![image](https://user-images.githubusercontent.com/48971064/220737054-d227e378-459a-49d6-be0a-be4c2f586b6d.png)
+# Makes a bare clone of the external repository in a local directory
+
+* Faça o push do repositório clonado localmente em GitHub usando a opção "mirror" (espelho), que assegura que todas as referências, como branches e tags, são copiadas para o repositório importado.
+
+$ cd REPO.git
+
+$ git push --mirror https://github.com/USER/REPO.git
+# Pushes the mirror to the new repository on GitHub.com
 
 * Acessar o botão clone, seleciona copy URL
 
